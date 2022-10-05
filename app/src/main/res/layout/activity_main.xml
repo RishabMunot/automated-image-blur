@@ -49,6 +49,14 @@
         android:longClickable="true"
         android:numColumns="2"
         tools:listitem="@layout/images_list_item" />
+    <TextView
+        android:id="@+id/empty"
+        android:text="Please select Images."
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center">
+    </TextView>
 
     <Button
         android:id="@+id/processButton"
@@ -60,6 +68,34 @@
         android:backgroundTint="@color/teal_200"
         android:elevation="16dp"
         android:onClick="handleProcess"
-        android:text="process" />
+        android:text="Proceed" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/editImagePopUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="100dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8000"
+            android:clickable="true"
+            android:onClick="hideViewImagePopUp" />
+
+        <ImageView
+            android:id="@+id/editImageImageView"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="24dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

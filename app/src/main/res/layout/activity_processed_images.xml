@@ -26,35 +26,129 @@
         android:numColumns="2"
         tools:listitem="@layout/images_list_item" />
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/popUp">-->
+    <TextView
+        android:id="@+id/empty"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="Images Done Exporting!\n\nClick share button to directly share images or please check Pictures folder." />
 
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:background="#8000"-->
-<!--            />-->
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView"-->
-<!--            android:layout_width="250dp"-->
-<!--            android:layout_height="400dp"-->
-<!--            android:layout_centerInParent="true" />-->
-<!--    </RelativeLayout>-->
-
-
-    <Button
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/exportButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/teal_200"
-        android:drawableLeft="@drawable/ic_baseline_save_alt_24"
-        android:elevation="16dp"
+        android:background="@drawable/circular_border_shape"
+        android:clipToPadding="false"
+        android:elevation="20dp"
         android:onClick="exportImages"
-        android:text="save" />
+        android:text="export"
+        android:textColor="@color/white"
+        app:spinning_bar_color="#FFF"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sharebutton"
+        android:onClick="shareImages"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="30dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/editImagePopUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="100dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8000"
+            android:clickable="true"
+            android:onClick="hideEditImagePopUp" />
+
+        <ImageView
+            android:id="@+id/editImageImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="24dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/buttonPanelUndo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_undo_24"
+                android:backgroundTint="@color/teal_200"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/buttonPanelDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_done_24"
+                android:backgroundTint="@color/teal_200"
+                android:onClick="saveEditedImage"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:clickable="true"
+        android:elevation="21dp"
+        android:padding="40dp">
+
+        <Button
+            android:id="@+id/start_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="start processing" />
+
+        <!--        <com.ramijemli.percentagechartview.PercentageChartView-->
+        <!--            android:id="@+id/percent"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="400dp"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            app:pcv_animDuration="500"-->
+        <!--            app:pcv_animInterpolator="accelerate_decelerate"-->
+        <!--            app:pcv_mode="ring"-->
+        <!--            app:pcv_orientation="clockwise"-->
+        <!--            app:pcv_progress="0"-->
+        <!--            app:pcv_progressColor="@color/teal_200"-->
+        <!--            app:pcv_startAngle="270" />-->
+
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Click START PROCESSING to start\n\nPlease wait for processing to complete..."
+            android:textAlignment="center"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
 
 </RelativeLayout>

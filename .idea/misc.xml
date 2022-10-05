@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Rishab/Desktop/Beezness Projects/automated-image-blur/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Rishab/Desktop/Beezness Projects/automated-image-blur/app/src/main/res/drawable/circular_border_shape.xml" value="0.1685" />
+        <entry key="..\:/Users/Rishab/Desktop/Beezness Projects/automated-image-blur/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Users/Rishab/Desktop/Beezness Projects/automated-image-blur/app/src/main/res/layout/activity_processed_images.xml" value="0.152" />
         <entry key="..\:/Users/Rishab/Desktop/Beezness Projects/automated-image-blur/app/src/main/res/layout/images_list_item.xml" value="0.12708333333333333" />
       </map>
